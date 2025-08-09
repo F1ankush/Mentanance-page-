@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Govt. Middle School Malipur</title>
+
+    <link href="logo123.jpg" rel="icon">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            overflow: hidden;
+            flex-direction: column;
+        }
+        .container {
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            max-width: 90%;
+        }
+        .gear {
+            font-size: 100px;
+            animation: spin 3s linear infinite;
+        }
+        .logo {
+            width: 1500px;
+            max-width: 80%;
+            margin-bottom: 20px;
+        }
+        h1, p {
+            max-width: 90%;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        .fade-in-text {
+            opacity: 0;
+            animation: textFadeIn 3s forwards 1s;
+        }
+        @keyframes textFadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        @media (max-width: 1024px) {
+            .gear {
+                font-size: 80px;
+            }
+            .logo {
+                width: 200px;
+            }
+            h1 {
+                font-size: 24px;
+            }
+            p {
+                font-size: 16px;
+            }
+        }
+        @media (max-width: 768px) {
+            .gear {
+                font-size: 70px;
+            }
+            .logo {
+                width: 480px;
+            }
+            h1 {
+                font-size: 22px;
+            }
+            p {
+                font-size: 15px;
+            }
+        }
+        @media (max-width: 480px) {
+            .gear {
+                font-size: 50px;
+            }
+            .logo {
+                width: 450px;
+            }
+            h1 {
+                font-size: 20px;
+            }
+            p {
+                font-size: 14px;
+            }
+        }
+
+         marquee {
+      position: absolute;
+      width: 100%;
+      color: #79f60c;
+      font-size: 16px;
+      background: rgba(0, 0, 0, 0.05);
+      padding: 5px 0;
+      z-index: 1;
+    }
+
+    .marquee-top {
+      top: 0;
+    }
+
+    .marquee-bottom {
+      bottom: 0;
+    }
+    </style>
+</head>
+<body>
+ <!-- Top marquee (Right to Left) -->
+  <marquee class="marquee-top" behavior="scroll" direction="left">
+    ⚠️ Thanks for visiting our website. We are currently under maintenance 
+  </marquee>
+    
+    <div class="container">
+          <img src="assets/gms.jpg" alt="gmsLogo" class="logo">
+        <div class="gear">⚙️</div>
+        <h1 class="fade-in-text"> Website is Under Maintenance </h1>
+        <p class="fade-in-text">We are currently working on some improvements. Please check back soon!</p>
+    </div>
+
+     <!-- Bottom marquee (Left to Right) -->
+  <marquee class="marquee-bottom" behavior="scroll" direction="right">
+    Please check back soon!
+  </marquee>
+
+   <script>
+// Disable right-click
+document.addEventListener('contextmenu', function (e) {
+    e.preventDefault();
+    alert("Right-click is disabled on this page.");
+});
+
+// Disable text selection
+document.addEventListener('selectstart', function (e) {
+    e.preventDefault();
+});
+
+// Disable text copy
+document.addEventListener('copy', function (e) {
+    e.preventDefault();
+    alert("Copying text is disabled.");
+});
+
+// Disable image dragging
+document.querySelectorAll('img').forEach(img => {
+    img.addEventListener('dragstart', function (e) {
+        e.preventDefault();
+    });
+});
+
+// Block common keyboard shortcuts
+document.addEventListener('keydown', function (e) {
+    if (e.ctrlKey && 
+        (e.key === 'u' || e.key === 's' || e.key === 'c' || e.key === 'x' || e.key === 'p')) {
+        e.preventDefault();
+        alert("Keyboard shortcuts are disabled.");
+    }
+    if (e.key === 'PrintScreen') {
+        navigator.clipboard.writeText('');
+        alert("Screenshots are disabled.");
+    }
+});
+
+
+   </script> 
+</body>
+</html>
